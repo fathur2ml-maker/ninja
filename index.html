@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NINJA CLASH</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:#090e1b;color:white;
+ font-family:Arial;text-align:center;
+}
+header{padding:18px}
+h1{color:#ffc857;letter-spacing:4px}
+main{max-width:850px;margin:auto;padding:10px}
+.panel{
+ background:#152238;padding:14px;
+ border-radius:15px;margin-bottom:12px;
+}
+select,button{
+ padding:12px;border-radius:9px;
+ border:1px solid #536780;
+ background:#263b58;color:white;
+ font-weight:bold;margin:4px;
+}
+button:active{transform:scale(.95)}
+#arena{
+ width:100%;height:auto;
+ background:linear-gradient(#253d59,#111827);
+ border:2px solid #ffc857;
+ border-radius:12px;
+ touch-action:none;
+}
+.health{
+ height:15px;background:#333;
+ border-radius:20px;overflow:hidden;
+}
+.fill{height:100%;background:#20dc87;width:100%}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.controls{
+ display:grid;grid-template-columns:repeat(3,65px);
+ justify-content:space-between;gap:5px;
+ margin-top:15px;
+}
+.controls button{font-size:18px;height:55px}
+.attack{background:#9e293d}
+.skill{background:#175f9c}
+.ultimate{background:#9c5811}
+#message{color:#ffc857;min-height:25px}
+</style>
+</head>
+
+<body>
+<header>
+<h1>⚔ NINJA CLASH</h1>
+<p>ULTIMATE BATTLE</p>
+</header>
+
+<main>
+<div class="panel">
+<h3>PILIH KARAKTER</h3>
+<select id="character">
+<option value="Raiko">Raiko - Petir</option>
+<option value="Kage">Kage - Bayangan</option>
+<option value="Hana">Hana - Api</option>
+<option value="Taro">Taro - Batu</option>
+</select>
+
+<h3>PILIH ARENA</h3>
+<select id="arenaSelect">
+<option>Hutan Ninja</option>
+<option>Dojo Bulan</option>
+<option>Lembah Lava</option>
+<option>Puncak Salju</option>
+</select>
+
+<button onclick="startGame()">MULAI BATTLE</button>
+</div>
+
+<div class="panel">
+<div class="stats">
+<div>
+<b id="playerName">PEMAIN</b>
+<div class="health"><div id="playerHP" class="fill"></div></div>
+<p id="playerValue">100 HP</p>
+</div>
+<div>
+<b>MUSUH AI</b>
+<div class="health"><div
